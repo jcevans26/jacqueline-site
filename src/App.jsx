@@ -168,30 +168,41 @@ export default function JacquelineEvansLesseWebsite() {
           </div>
 
           <div className="grid gap-6">
-            <div className="overflow-hidden rounded-[2rem] border border-fuchsia-100 bg-white/80 shadow-2xl shadow-fuchsia-100/70 backdrop-blur-sm">
-              <div className="p-8">
-                <div className="flex flex-col items-center gap-6">
-                  <div className="relative flex h-64 w-64 items-center justify-center overflow-hidden rounded-full bg-gradient-to-br from-violet-50 via-fuchsia-50 to-amber-50 ring-2 ring-fuchsia-200">
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(124,58,237,0.22),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(245,158,11,0.18),transparent_32%),radial-gradient(circle_at_left,rgba(14,165,233,0.16),transparent_28%)]" />
-                    <img
-                      src="/headshot.jpg"
-                      alt="Jacqueline Evans-Lesse"
-                      className="relative z-10 h-full w-full object-cover"
-                      onError={(e) => {
-                        e.currentTarget.style.display = "none";
-                        const fallback = e.currentTarget.nextElementSibling;
-                        if (fallback) {
-                          fallback.classList.remove("hidden");
-                          fallback.classList.add("flex");
-                        }
-                      }}
-                    />
-                    <div className="relative z-10 hidden h-full w-full items-center justify-center p-6 text-center text-sm leading-6 text-slate-500">
-                      Add your photo as
-                      <br />
-                      /headshot.jpg
-                    </div>
-                  </div>
+  <div className="overflow-hidden rounded-[2rem] border border-fuchsia-100 bg-white/80 shadow-2xl shadow-fuchsia-100/70 backdrop-blur-sm">
+    <img
+      src="/hero.jpg"
+      alt="Jacqueline Evans-Lesse"
+      className="h-full w-full object-cover"
+    />
+  </div>
+
+  <div className="rounded-[2rem] border border-violet-100 bg-white/80 p-8 shadow-2xl shadow-violet-100/70 backdrop-blur-sm">
+    <div className="mb-5 flex items-center justify-between gap-3">
+      <SectionLabel>Core strengths</SectionLabel>
+      <span className="rounded-full bg-gradient-to-r from-violet-100 via-fuchsia-100 to-amber-100 px-3 py-1 text-xs font-medium text-fuchsia-700">
+        Strategic + Human
+      </span>
+    </div>
+    <div className="space-y-3">
+      {strengths.map((item, index) => (
+        <div
+          key={item}
+          className={`rounded-2xl border bg-gradient-to-r px-4 py-3 text-sm leading-7 text-slate-700 ${
+            index === 0
+              ? "from-violet-50/70 to-white border-violet-100"
+              : index === 1
+              ? "from-rose-50/70 to-white border-rose-100"
+              : index === 2
+              ? "from-sky-50/70 to-white border-sky-100"
+              : "from-amber-50/70 to-white border-amber-100"
+          }`}
+        >
+          {item}
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
 
                   <div className="text-center">
                     <h3 className="bg-gradient-to-r from-violet-700 via-fuchsia-600 to-amber-500 bg-clip-text text-2xl font-semibold text-transparent">
